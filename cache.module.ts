@@ -14,6 +14,7 @@ function getModules() {
   const modules = [
     ConfigModule.forRoot({load: [MicroservicesConfiguration], isGlobal: true}),
   ];
+
   if (process.env.REDIS_HOST) {
     modules.push(
       CacheModule.registerAsync({
@@ -42,5 +43,6 @@ function getModules() {
       })
     );
   }
+
   return modules;
 }

@@ -1,4 +1,4 @@
-import {Global, Module} from '@nestjs/common';
+import {DynamicModule, Global, Module} from '@nestjs/common';
 import {ConfigModule, ConfigService} from '@nestjs/config';
 import {CacheModule} from '@nestjs/cache-manager';
 import KeyvRedis from '@keyv/redis';
@@ -12,8 +12,8 @@ import MicroservicesConfiguration from '../microservices.config';
 })
 export class NewbieCacheModule {}
 
-function getModules() {
-  const modules = [ConfigModule.forRoot({load: [MicroservicesConfiguration], isGlobal: true})];
+function getModules(): (DynamicModule | Promise<DynamicModule>)[] {
+  const modules: (DynamicModule | Promise<DynamicModule>)[] = [ConfigModule.forRoot({load: [MicroservicesConfiguration], isGlobal: true})];
 
   if (process.env.REDIS_HOST) {
     modules.push(

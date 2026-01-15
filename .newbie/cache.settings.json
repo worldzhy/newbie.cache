@@ -21,13 +21,13 @@
     "CACHE_REDIS_PASSWORD": ""
   },
   "dependencies": {
-    "@keyv/redis": "^5.1.4",
-    "@nestjs/cache-manager": "^3.0.1",
-    "cache-manager": "^7.2.5",
-    "cacheable": "^2.3.0",
-    "keyv": "^5.5.4"
+    "@keyv/redis": "latest",
+    "@nestjs/cache-manager": "latest",
+    "cache-manager": "latest",
+    "cacheable": "latest",
+    "keyv": "latest"
   },
   "devDependencies": {
-    "@types/cache-manager": "^5.0.0"
+    "@types/cache-manager": "latest"
   }
 }
